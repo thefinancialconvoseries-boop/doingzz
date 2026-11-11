@@ -2,6 +2,6 @@
 <script>
 const ids=(new URLSearchParams(location.search).get('ids')||'').split(','),g=document.getElementById('g');
 ids.forEach(async id=>{const d=document.createElement('div');g.append(d);
- try{const r=await fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent('https://www.tiktok.com/@common_threadd/video/'+id));const j=await r.json();const im=new Image();im.src=j.thumbnail_url;d.append(im);}
+ try{const r=await fetch('https://www.tiktok.com/oembed?url='+encodeURIComponent('https://www.tiktok.com/@common_threadd/video/'+id));const j=await r.json();const im=new Image();im.referrerPolicy='no-referrer';im.src=j.thumbnail_url;d.append(im);}
  catch(e){d.innerHTML='<span>ERR '+id+' '+e+'</span>';}});
 </script></body></html>
